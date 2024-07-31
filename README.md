@@ -1,24 +1,8 @@
-*Índice*
-- Descripción
-- Tecnologías Utilizadas
-- Funcionalidad
-- Uso de la página
+# React + Vite
 
-*Descripción*
-- El siguiente desafío consiste en crear una SPA con la finalidad de evaluar la implementación de REACT ROUTER, REACT + VITE, el uso de Context API, como también de los Hooks UseParams y UseNavigate. El proyecto se enmarca dentro del desafío 3 del módulo 5 del BootCamp de DesafioLatam.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-*Tecnologías utilizadas*
-- HTML
-- CSS
-- JavaScript
-- REACT + VITE
-- React Router
-- Hooks useNavigate y useParams
+Currently, two official plugins are available:
 
-*Funcionalidad*
-- El desafío nos permite crear una SPA donde podremos consultar por diversos Pokemóns y a su vez navegar a través de distinas Views. 
-
-*Uso de la página*
-- Ingresa al servidor otorgado por React.
-- Navega a través de las distintas Views creadas.
-- Selecciona el Pokemón que deseas consultar.
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
