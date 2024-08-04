@@ -21,12 +21,12 @@ export default function Home() {
           {pizzas.map((pizza) => (
             <Col key={pizza.id}>
               <Card>
-                <Card.Img src={pizza.img} alt={pizza.name} />
-                <Card.Header>
+                <Card.Img variant="top" src={pizza.img} alt={pizza.name} />
+                <Card.Header className="text-center">
                   <span className="text-capitalize fw-bold">{pizza.name}</span>
                 </Card.Header>
                 <Card.Body>
-                  Ingredientes:
+                  <Card.Text>Ingredientes:</Card.Text>
                   <ul>
                     {pizza.ingredients.map((ingrediente, index) => (
                       <li key={index}>🍕 {ingrediente}</li>
@@ -37,14 +37,17 @@ export default function Home() {
                   <Card.Text className="fw-bold mb-2">
                     {monedaLocal(pizza.price)}
                   </Card.Text>
-                  <Card.Text className="d-flex justify-content-around">
-                    <Button onClick={() => navigate(`/desafio-mammamia/pizza/${pizza.id}`)}>
+                  <div className="d-flex justify-content-around">
+                    <Button
+                      variant="primary"
+                      onClick={() => navigate(`/desafio-mammamia/pizza/${pizza.id}`)}
+                    >
                       Ver más
                     </Button>
-                    <Button onClick={() => addCart(pizza)}>
+                    <Button variant="primary" onClick={() => addCart(pizza)}>
                       Añadir <IconCart tamaño=".9rem" color="white" />{' '}
                     </Button>
-                  </Card.Text>
+                  </div>
                 </Card.Footer>
               </Card>
             </Col>

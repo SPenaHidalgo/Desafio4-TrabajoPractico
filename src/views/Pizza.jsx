@@ -1,7 +1,7 @@
 import { useParams } from 'react-router-dom';
 import { useContext } from 'react';
+import { Container, Card, Button, Row, Col } from 'react-bootstrap';
 import { Context } from '../contexts/PizzaContext';
-import { Container, Card, Button } from 'react-bootstrap';
 import IconCart from '../componentes/IconCart';
 
 export default function Pizza() {
@@ -12,37 +12,35 @@ export default function Pizza() {
     <Container>
       {pizzas
         .filter((pizza) => pizza.id === id)
-        .map((pizza, index) => (
-          <Card key={index} className="row flex-row py-3">
-            <Container className="col-12 col-md-4">
-              <Card.Img src={pizza.img} alt={pizza.name} />
-            </Container>
-            <Container className="col-12 col-md-8">
-              <Card.Header>
-                <span className="text-capitalize fw-bold fs-5">
-                  {pizza.name}
-                </span>
-              </Card.Header>
-              <Card.Body>
-                <Card.Text>{pizza.desc}</Card.Text>
-                Ingredientes:
-                <ul>
-                  {pizza.ingredients.map((ingrediente, index) => (
-                    <li key={index}>🍕 {ingrediente}</li>
-                  ))}
-                </ul>
-              </Card.Body>
-              <Card.Footer className="text-center">
-                <Card.Text className="d-flex justify-content-around align-items-center">
-                  <span className="fw-bold fs-5">
-                    {monedaLocal(pizza.price)}
-                  </span>
-                  <Button onClick={() => addCart(pizza)}>
-                    Añadir <IconCart tamaño=".9rem" color="white" />
-                  </Button>
-                </Card.Text>
-              </Card.Footer>
-            </Container>
+        .map((pizza) => (
+          <Card key={pizza.id} className="py-3">
+            <Row className="g-3">
+              <Col md={4}>
+                <Card.Img src={pizza.img} alt={pizza.name} />
+              </Col>
+              <Col md={8}>
+                <Card.Header>
+                  <h5 className="text-capitalize fw-bold">{pizza.name}</h5>
+                </Card.Header>
+                <Card.Body>
+                  <Card.Text>{pizza.desc}</Card.Text>
+                  <Card.Text>Ingredientes:</Card.Text>
+                  <ul>
+                    {pizza.ingredients.map((ingrediente, index) => (
+                      <li key={index}>🍕 {ingrediente}</li>
+                    ))}
+                  </ul>
+                </Card.Body>
+                <Card.Footer className="text-center">
+                  <div className="d-flex justify-content-around align-items-center">
+                    <span className="fw-bold fs-5">{monedaLocal(pizza.price)}</span>
+                    <Button onClick={() => addCart(pizza)}>
+                      Añadir <IconCart tamaño=".9rem" color="white" />
+                    </Button>
+                  </div>
+                </Card.Footer>
+              </Col>
+            </Row>
           </Card>
         ))}
     </Container>
