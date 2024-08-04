@@ -21,4 +21,4 @@
 *Uso de la página*
 - Ingresa al servidor otorgado por React.
 - Navega a través de las distintas Views creadas.
-- Selecciona el Pokemón que deseas consultar.
+- Selecciona las pizzas que deseas comprar.
