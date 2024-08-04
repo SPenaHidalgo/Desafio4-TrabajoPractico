@@ -13,6 +13,7 @@
 - JavaScript
 - REACT + VITE
 - React Router
+- React Router DOM
 - Hooks useNavigate y useParams
 
 *Funcionalidad*
